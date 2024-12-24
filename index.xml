@@ -5,18 +5,7 @@
 &lt;p>The possible causes of the OOD problem in FI explanations are shown in the following figure.
 &lt;img loading="lazy" src="image.png" alt="alt text" />
 Even on in-distribution data, neural networks are sensitive to random parameter initialization, data ordering, and hyperparameters.
-Therefore, neural networks are also influenced by these factors when processing OOD data.&lt;/p></description></item><item><title>Note on NeurIPS 2022 What You See Is What You Classify</title><link>https://lif323.github.io/posts/post-40/</link><pubDate>Mon, 16 Dec 2024 21:56:05 +0800</pubDate><guid>https://lif323.github.io/posts/post-40/</guid><description>$$
-\begin{equation}
-\begin{aligned}
-\mathbf{q}_{\text{mask}} &amp;= \operatorname{sort}(\operatorname{vector}(\mathbf{s})) \in [0, 1]^Z \\
-\mathbf{q}_{\text{min}} &amp;= [\mathbf{1}^{\lfloor Za\rfloor}, \cdots, \mathbf{0}^{\lfloor 1 - Za\rfloor}] \\
-\mathbf{q}_{\text{max}} &amp;= [\mathbf{1}^{\lfloor Zb \rfloor}, \cdots, \mathbf{0}^{\lfloor 1 - Zb \rfloor}] \\
-\end{aligned}
-\end{equation}
-$$$$
-\mathcal{B}(\mathbf{s}) = \frac{1}{Z}\sum_{i=1}^{Z}\max(\mathbf{q}_{\text{min}}[i] - \mathbf{q}_{\text{mask}}[i], 0) + \frac{1}{Z}\sum_{i=1}^{Z}\max(\mathbf{q}_{\text{mask}}[i] - \mathbf{q}_{\text{max}}[i], 0).
-$$&lt;p>
-where the first term forces the attribution $\mathbf{q}_{\text{mask}}[:\lfloor Za\rfloor]$ to approach 1, while the second term drives $\mathbf{q}_{\text{mask}}[\lfloor Z - Zb\rfloor:]$ to approach 0. Consequently, the number of non-zero attribution, N, satisfies $Za \leq N \leq Zb$.&lt;/p></description></item><item><title>Selective Explanations NeurIPS 2024</title><link>https://lif323.github.io/posts/post-35/</link><pubDate>Mon, 14 Oct 2024 16:26:32 +0800</pubDate><guid>https://lif323.github.io/posts/post-35/</guid><description>&lt;p>When explaining large black-box model with a large number of parameters, this paper classify existing feature attribution methods into three groups:&lt;/p>
+Therefore, neural networks are also influenced by these factors when processing OOD data.&lt;/p></description></item><item><title>Selective Explanations NeurIPS 2024</title><link>https://lif323.github.io/posts/post-35/</link><pubDate>Mon, 14 Oct 2024 16:26:32 +0800</pubDate><guid>https://lif323.github.io/posts/post-35/</guid><description>&lt;p>When explaining large black-box model with a large number of parameters, this paper classify existing feature attribution methods into three groups:&lt;/p>
 &lt;p>(1) Original feature attribution methods. They usually be prohibitively expensive for the large models due to each individual explanations requires a significant number of inferences.&lt;/p>
 &lt;p>(2) Monte Carlo methods. They employ Monte Carlo methods to approximate explanations with fewer computations.&lt;/p>
 &lt;p>(3) Amortized methods. They train a separate model to mimic the output of original feature attribution methods.&lt;/p></description></item><item><title>CoRTX ICLR 2023</title><link>https://lif323.github.io/posts/post-31/</link><pubDate>Wed, 25 Sep 2024 09:54:31 +0800</pubDate><guid>https://lif323.github.io/posts/post-31/</guid><description>&lt;p>Before introducing this work, I will first present the Real-time explainer (RTX) framework. RTX is a one-feed-forward explainer that can generate model explanations more efficiently. A major limitation of existing RTX approaches is their reliance on a large number of explanation labels. In my view, RTX is a neural network that generates explanations but like other domains, it also requires substantial data for training.&lt;/p>
