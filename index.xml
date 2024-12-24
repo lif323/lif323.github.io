@@ -5,7 +5,7 @@
 &lt;p>The possible causes of the OOD problem in FI explanations are shown in the following figure.
 &lt;img loading="lazy" src="image.png" alt="alt text" />
 Even on in-distribution data, neural networks are sensitive to random parameter initialization, data ordering, and hyperparameters.
-Therefore, neural networks are also influenced by these factors when processing OOD data.&lt;/p></description></item><item><title>Note on What You See Is What You Classify</title><link>https://lif323.github.io/posts/post-40/</link><pubDate>Mon, 16 Dec 2024 21:56:05 +0800</pubDate><guid>https://lif323.github.io/posts/post-40/</guid><description>$$
+Therefore, neural networks are also influenced by these factors when processing OOD data.&lt;/p></description></item><item><title>Note on NeurIPS 2022 What You See Is What You Classify</title><link>https://lif323.github.io/posts/post-40/</link><pubDate>Mon, 16 Dec 2024 21:56:05 +0800</pubDate><guid>https://lif323.github.io/posts/post-40/</guid><description>$$
 \begin{equation}
 \begin{aligned}
 \mathbf{q}_{\text{mask}} &amp;= \operatorname{sort}(\operatorname{vector}(\mathbf{s})) \in [0, 1]^Z \\
