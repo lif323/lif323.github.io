@@ -8,7 +8,12 @@
 <title>Note Learning Perturbation ICML 2023 | lif323</title>
 <meta name="keywords" content="">
 <meta name="description" content="This work is an extension of DynaMask. In DynaMask, perturbations are local and fixed. However, time series data typically exhibit long-term dependencies, making it insufficient to determine the importance of a feature at a specific time point based solely on local information.
-In DynaMask, the perturbation function is defined as follows: $$ \Phi(x) = m \cdot x &#43; (1 - m) \cdot f(x) $$ where f(x) is a fixed function. A possible definition is $f(x_{t}) = \frac{1}{W} \sum_{t&#39;=t- W}^{t} x_{t&#39;}$.">
+In DynaMask, the perturbation function is defined as follows:
+
+$$
+\Phi(x) = m \cdot x &#43; (1 - m) \cdot f(x)
+$$
+where f(x) is a fixed function. A possible definition is $f(x_{t}) = \frac{1}{W} \sum_{t&#39;=t- W}^{t} x_{t&#39;}$.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/post-18/note-learning-perturbation-icml-2023/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.1d23bc8761bb8a516d01801663a24eeedbf97720019a7ddc0fc9ff29a2a8730d.css" integrity="sha256-HSO8h2G7ilFtAYAWY6JO7tv5dyABmn3cD8n/KaKocw0=" rel="preload stylesheet" as="style">
@@ -130,6 +135,12 @@ In DynaMask, the perturbation function is defined as follows: $$ \Phi(x) = m \cd
     
     <h1 class="post-title entry-hint-parent">
       Note Learning Perturbation ICML 2023
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
     </h1>
     <div class="post-meta"><span title='2024-08-12 21:55:53 +0800 CST'>August 12, 2024</span>
 
@@ -140,27 +151,23 @@ In DynaMask, the perturbation function is defined as follows: $$ \Phi(x) = m \cd
 </p>
 $$
 \Phi(x) = m \cdot x + (1 - m) \cdot f(x)
-$$
-<p>
+$$<p>
 where f(x) is a fixed function. A possible definition is $f(x_{t}) = \frac{1}{W} \sum_{t'=t- W}^{t} x_{t'}$.</p>
 <p>Their improvement is changing the perturbation to a trainable network.
 </p>
 $$
 \Phi(x) = m \cdot x + (1 - m) \cdot NN(x)
-$$
-<p>
+$$<p>
 In their work, they set the $NN(x)$ as GRU.</p>
 <p>If the objective is defined as in DyncMask:
 </p>
 $$
 \argmin_{m, \theta \in NN} \lambda \Vert m \Vert_{1} + \mathcal{L}(\phi(x, m)),
-$$
-<p>
+$$<p>
 the definition will induce the NN(x) to mimic the original $x$ data, i.e. $NN(x) \approx x$, the objective is approximately zero. To prevent this behavior, they add loss $\Vert NN \Vert$, using zero as prior.</p>
 $$
 \argmin_{m, \theta \in NN} \lambda_1 \Vert m \Vert_{1} + \lambda_2 \Vert NN(x) \Vert_{1} + \mathcal{L}(\phi(x, m)),
-$$
-<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+$$<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
 <p>Enguehard, J. (2023, July). Learning perturbations to explain time series predictions. In International Conference on Machine Learning (pp. 9329-9342). PMLR.</p>
 
 
@@ -189,7 +196,7 @@ $$
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">lif323</a></span>
+    <span>&copy; 2025 <a href="http://localhost:1313/">lif323</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
