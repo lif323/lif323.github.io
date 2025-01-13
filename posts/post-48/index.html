@@ -5,15 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Optimal Ablation NeurIPS 2024 | lif323</title>
+<title>HSIC NeurIPS 2022 | lif323</title>
 <meta name="keywords" content="">
-<meta name="description" content="Optimal Ablation (OA) based methods have theoretical and empirical advantages over measuring importance via other ablation methods.
-This paper states that ablation methods aim to answer the following question:
-What is the best performance on subtask $\mathcal{D}$ the model $M$ could have achieved without component $\mathcal{A}$ ?
-$\mathcal{M}^{-\mathcal{A}}(X)$: the ablated model on component $\mathcal{A}$ is constructed by changing the value of $\mathcal{A}$, holding fixed all other parts of $\mathcal{M}$.
-$\mathcal{M}_{\mathcal{A}}(x, a)$: computing $\mathcal{M}$ on input $x$ while setting the value of $\mathcal{A}$ to $a$ instead of $\mathcal{A}(x)$">
+<meta name="description" content="This paper define the importance score of an image patch as the dependence between the perturbation $M_i$ and the output $y$. The greater the dependence of $y$ on $M_i$, the more important the corresponding image patch $x_i$ is.
+To compute the dependence between two random variables, they introduce the Hilbert-Schmidt Independence Criterion along with a computationally efficient estimation method for HSIC.
+The algorithm is defined as follows:
+
+
+References
+
+A. Gretton, O. Bousquet, A. Smola, and B. Schölkopf. Measuring statistical dependence with hilbert-schmidt norms. In Proceedings of the 16th International Conference on Algorithmic Learning Theory, ALT’05, page 63–77, Berlin, Heidelberg, 2005. Springer-Verlag
+Novello, P., Fel, T. and Vigouroux, D., 2022. Making sense of dependence: Efficient black-box explanations using dependence measure. Advances in Neural Information Processing Systems, 35, pp.4344-4357.
+">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/post-47/">
+<link rel="canonical" href="http://localhost:1313/posts/post-48/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.1d23bc8761bb8a516d01801663a24eeedbf97720019a7ddc0fc9ff29a2a8730d.css" integrity="sha256-HSO8h2G7ilFtAYAWY6JO7tv5dyABmn3cD8n/KaKocw0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -22,7 +27,7 @@ $\mathcal{M}_{\mathcal{A}}(x, a)$: computing $\mathcal{M}$ on input $x$ while se
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/post-47/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/post-48/">
 <noscript>
     <style>
         #theme-toggle,
@@ -132,7 +137,7 @@ $\mathcal{M}_{\mathcal{A}}(x, a)$: computing $\mathcal{M}$ on input $x$ while se
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Optimal Ablation NeurIPS 2024
+      HSIC NeurIPS 2022
       <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
           <path
@@ -140,41 +145,20 @@ $\mathcal{M}_{\mathcal{A}}(x, a)$: computing $\mathcal{M}$ on input $x$ while se
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2025-01-10 11:30:28 +0800 CST'>January 10, 2025</span>
+    <div class="post-meta"><span title='2025-01-11 01:21:54 +0800 CST'>January 11, 2025</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Optimal Ablation (OA) based methods have theoretical and empirical advantages over measuring importance via other ablation methods.</p>
-<p>This paper states that ablation methods aim to answer the following question:
-<strong>What is the best performance on subtask $\mathcal{D}$ the model $M$ could have achieved without component $\mathcal{A}$ ?</strong></p>
-<p>$\mathcal{M}^{-\mathcal{A}}(X)$: the ablated model on component $\mathcal{A}$ is constructed by changing the value of $\mathcal{A}$, holding fixed all other parts of $\mathcal{M}$.</p>
-<p>$\mathcal{M}_{\mathcal{A}}(x, a)$: computing $\mathcal{M}$ on input $x$ while setting the value of $\mathcal{A}$ to $a$ instead of $\mathcal{A}(x)$</p>
-<p><strong>Total ablation</strong>: A total ablation method satisfies $\mathcal{M}^{-\mathcal{A}}(X) = \mathcal{M}_{\mathcal{A}}(x, A)$ for some random $A$, where $A \perp X$.</p>
-<p>I think a more direct statement of <strong>Total ablation</strong> $\mathcal{M}^{-\mathcal{A}}(X)$ as follows:</p>
-$$
-\mathcal{M}^{-\mathcal{A}}(X) := \mathcal{M}_{\mathcal{A}}(x, A),  A \perp X
-$$<p>
-For <strong>best performance</strong>, they give the following example to illustrate it.</p>
-<blockquote>
-<p>If two constructions of the ablated model $\mathcal{M}^{-\mathcal{A}}(X)$ both perform total ablation on Abut one performs worse than another, the former’s underperformance cannot be entirely be attributed to ablating A, since the latter also totally ablates Aand yet does not degrade performance to the same extent. Thus, the relevant $\mathcal{M}^{-\mathcal{A}}(X)$ for measuring importance should incur the minimum $\Delta$ among total ablation methods.</p>
-</blockquote>
-<p>TWO Factors degrade the model performance after replacing $\mathcal{A}(x)$ with $a$.</p>
-<p><strong>Deletion</strong>: Replacing $\mathcal{A}(x)$ with some other value acould delete this information about $x$, hindering the model’s ability to compute the original $\mathcal{M}(x)$.</p>
-<p><strong>Spoofing</strong>: The replacement value acould “spoof” the downstream computation by inserting information about the input that either:</p>
-<ul>
-<li>causes the model to treat x like a different input x′; or</li>
-<li>causes the model to treat x in a way that it never treated any training input, if the new
-information is inconsistent with information about xderived from retained components.</li>
-</ul>
-<p><strong>Optimal Ablation</strong>: To ablate $\mathcal{A}$, we replace $\mathcal{A}(x)$ with an &lsquo;optimal&rsquo; constant $a^{*}$.
+  <div class="post-content"><p>This paper define the importance score of an image patch as the dependence between the perturbation $M_i$ and the output $y$. The greater the dependence of $y$ on $M_i$, the more important the corresponding image patch $x_i$ is.</p>
+<p>To compute the dependence between two random variables, they introduce the Hilbert-Schmidt Independence Criterion along with a computationally efficient estimation method for HSIC.</p>
+<p>The algorithm is defined as follows:
+<img loading="lazy" src="image.png" alt="alt text"  />
 </p>
-$$
-\mathcal{M}^{-\mathcal{A}}(X)_{(\text{opt})}(x):= \mathcal{M}_{\mathcal{A}}(x, a),\quad  a^{*} = \argmin_{a}\mathbb{E}_{X\sim \mathcal{D}}\mathcal{L}(\mathcal{M}_{\mathcal{A}}(X, a), \mathcal{M}_{\mathcal{A}}(X))
-$$<p>OA captures a maximal deletion effect because $A$ does not depend on $X$, and it minimizes the additional contribution of potential spoofing effects compared to other ablation methods.</p>
 <h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
-<p>M. Li and L. Janson. “Optimal ablation for interpretability”. In: The
-Thirty-eighth Annual Conference on Neural Information Processing Sys-
-tems. 2024.</p>
+<ul>
+<li>A. Gretton, O. Bousquet, A. Smola, and B. Schölkopf. Measuring statistical dependence with hilbert-schmidt norms. In Proceedings of the 16th International Conference on Algorithmic Learning Theory, ALT’05, page 63–77, Berlin, Heidelberg, 2005. Springer-Verlag</li>
+<li>Novello, P., Fel, T. and Vigouroux, D., 2022. Making sense of dependence: Efficient black-box explanations using dependence measure. Advances in Neural Information Processing Systems, 35, pp.4344-4357.</li>
+</ul>
 
 
   </div>

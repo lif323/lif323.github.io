@@ -132,6 +132,44 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Add Site to Google Serach
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> open the google search console. add site address into Domain. you will get a verification file ‘.html’. add it to /static folder in hugo. back to the address in step 1, click the verify button and test if the verification file has been correctly added. add sitemap.xml into the following position. </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-15 11:01:38 +0800 CST'>August 15, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Add Site to Google Serach" href="http://localhost:1313/posts/post-19/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Note Learning Perturbation ICML 2023
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This work is an extension of DynaMask. In DynaMask, perturbations are local and fixed. However, time series data typically exhibit long-term dependencies, making it insufficient to determine the importance of a feature at a specific time point based solely on local information.
+In DynaMask, the perturbation function is defined as follows: $$ \Phi(x) = m \cdot x &#43; (1 - m) \cdot f(x) $$ where f(x) is a fixed function. A possible definition is $f(x_{t}) = \frac{1}{W} \sum_{t&#39;=t- W}^{t} x_{t&#39;}$.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-12 21:55:53 +0800 CST'>August 12, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Note Learning Perturbation ICML 2023" href="http://localhost:1313/posts/post-18/note-learning-perturbation-icml-2023/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Note Integrated Directional Gradients
     </h2>
   </header>
@@ -242,39 +280,6 @@ The formula for KL divergence can be further transformed into the following form
   </div>
   <footer class="entry-footer"><span title='2024-06-21 16:16:47 +0800 CST'>June 21, 2024</span></footer>
   <a class="entry-link" aria-label="post link to Note on Extremal Perturbation ICCV 2019" href="http://localhost:1313/posts/post-10/note-on-extremal-perturbation-iccv-2019/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Cross_entropy
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span title='2024-06-20 15:59:03 +0800 CST'>June 20, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Cross_entropy" href="http://localhost:1313/posts/post-9/cross_entropy_and_kl/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Cross Entropy
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Cross-entropy is commonly used to quantify the difference between two probability distributions. In machine learning, its definition for one instance is as follows: $$ H(p, q) = - \sum_{c \in C} p(c)\log q(c) $$The ’true’ distribution is usually expressed in terms of a one-hot distribution.
-Suppose that the true label of an instance is B. The one-hot distribution for this instance is:
-Pr(Class A) Pr(Class B) Pr(Class C) 0.0 1.0 0.0 Suppose a machine learning algorithm predicts the following probability distribution:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-06-20 15:57:12 +0800 CST'>June 20, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Cross Entropy" href="http://localhost:1313/posts/post-8/cross_entropy/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
