@@ -88,7 +88,19 @@ $$$$
 &amp; = \argmin_{\theta} KL(P_{\text{data}}|| P_{\theta})
 \end{aligned}
 $$&lt;h1 id="references">References&lt;/h1>
-&lt;p>&lt;a href="https://www.youtube.com/watch?v=67_M2qP5ssY&amp;amp;list=PLJV_el3uVTsNi7PgekEUFsyVllAJXRsP-">https://www.youtube.com/watch?v=67_M2qP5ssY&amp;amp;list=PLJV_el3uVTsNi7PgekEUFsyVllAJXRsP-&lt;/a>&lt;/p></description></item><item><title>CEM NeurIPS 2018</title><link>https://lif323.github.io/posts/post-20/</link><pubDate>Mon, 26 Aug 2024 10:44:24 +0800</pubDate><guid>https://lif323.github.io/posts/post-20/</guid><description>&lt;p>This paper proposes a Contrastive Explanations method(CEM).
+&lt;p>&lt;a href="https://www.youtube.com/watch?v=67_M2qP5ssY&amp;amp;list=PLJV_el3uVTsNi7PgekEUFsyVllAJXRsP-">https://www.youtube.com/watch?v=67_M2qP5ssY&amp;amp;list=PLJV_el3uVTsNi7PgekEUFsyVllAJXRsP-&lt;/a>&lt;/p></description></item><item><title>Diffusion Models</title><link>https://lif323.github.io/posts/post-23/</link><pubDate>Tue, 03 Sep 2024 11:54:04 +0800</pubDate><guid>https://lif323.github.io/posts/post-23/</guid><description>$$
+X_0 \rightarrow \cdots \rightarrow X_{t} \rightarrow \cdots \rightarrow X_{T}
+$$$$
+X_T \rightarrow \cdots \rightarrow X_{t} \rightarrow \cdots \rightarrow X_{0}
+$$&lt;p>
+$X_T$: noise
+$X_0$: original sample&lt;/p>
+&lt;h1 id="vae-vs-diffusion-model">VAE vs. Diffusion model&lt;/h1>
+&lt;p>&lt;img loading="lazy" src="image-1.png" alt="alt text" />
+In diffusion model, the process of adding noise is similar with encoder in VAE, except that it is not learnable. The process of denoise is similar with decoder in VAE.&lt;/p>
+&lt;h1 id="training-in-diffusion-model">Training in Diffusion model&lt;/h1>
+&lt;p>&lt;img loading="lazy" src="image.png" alt="alt text" />
+$\mathbf{\epsilon}_{\theta}$ is a noise predictor. It take as input the noised image, and time step $t$ to predict the noise.&lt;/p></description></item><item><title>CEM NeurIPS 2018</title><link>https://lif323.github.io/posts/post-20/</link><pubDate>Mon, 26 Aug 2024 10:44:24 +0800</pubDate><guid>https://lif323.github.io/posts/post-20/</guid><description>&lt;p>This paper proposes a Contrastive Explanations method(CEM).
 They define a type of explanation where, given an input, the goal is to identify which features are both minimal and sufficient to justify its classification as well as which features are minimal and necessarily absent.&lt;/p>
 &lt;p>&lt;strong>Pertinent Negatives (PN)&lt;/strong> refers to the importance of missing features in model predictions. It essentially represents a counterfactual explanation. $\mathbf{x}_0 + \boldsymbol{\delta}$ denotes the counterfactual instance. A pertinent negative can be identified by solving the following optimization problem:&lt;/p></description></item><item><title>Note Integrated Directional Gradients</title><link>https://lif323.github.io/posts/post-17/note-integrated-directional-gradients/</link><pubDate>Mon, 05 Aug 2024 16:07:54 +0800</pubDate><guid>https://lif323.github.io/posts/post-17/note-integrated-directional-gradients/</guid><description>&lt;p>This paper proposes the Integrated Directional Gradients (IDG) to computing feature group attribution. One important thing is to find the family of meaningful feature subsets which is defined by the domain related methods, such as the constituency parse tree for NLP.&lt;/p>
 $$
